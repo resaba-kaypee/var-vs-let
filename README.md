@@ -9,3 +9,32 @@ console.log(camper) // "David"
 let camper = "James"
 let camper = "David" // error duplicate variable declaration
 
+//var
+function checkScope(){
+var i = "function scope"
+if(true) {
+var i = "block scope"; //overides the previous i "function scope"
+console.log("Block scope i is: ", i) 
+  }
+  console.log(Function scope i is: ", i)
+return i;
+}
+
+Block scope i is: "block scope";
+Function scope i is: "block scope";
+checkScope()// "block scope" because i is changed to "block scope"
+
+//let
+function checkScope(){
+let i = "function scope"; // this is declared outside of if statement (globally)
+if(true){
+let i = "block scope"; // this is declared inside of if statement block (locally)
+console.log("Block scope i is: ", i); //it will return what is inside the block
+  }
+  console.log("Function scope i is: ", i) // it will return what is outside of the block
+  return i;
+}
+
+Block scope i is: "block scope";
+Function scope i is: "function scope";
+checkScope() //function scope because i did not change globally;
