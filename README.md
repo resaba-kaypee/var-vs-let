@@ -38,3 +38,17 @@ console.log("Block scope i is: ", i); //it will return what is inside the block
 Block scope i is: "block scope";
 Function scope i is: "function scope";
 checkScope() //function scope because i did not change globally;
+
+
+//const is a read only
+const camper = "james"
+camper = "david" // error
+
+// mutate const
+const num = [7 ,4, 2];
+function editInPlace(){
+  num[0] = 2
+  num[1] = 4
+  num[2] = 7
+  return num;
+}
